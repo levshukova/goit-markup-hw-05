@@ -94,6 +94,7 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link.active {
   color: var(--accent-color);
@@ -130,15 +131,6 @@ body {
   border-radius: 2px;
   opacity: 1;
 }
-/* .site-nav .link:hover::after,
-.site-nav .link:focus::after {
-  color: var(--accent-color);
-  width: 100%;
-  height: 4px;
-  background: var(--accent-color);
-  border-radius: 2px;
-  opacity: 1;
-} */
 
 /* contacts */
 .contacts {
@@ -163,6 +155,8 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts .link:hover,
 .contacts .link:focus {
@@ -338,6 +332,8 @@ body {
   padding: 0;
   line-height: 0;
   background-color: var(--primary-white-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-socials:hover,
 .button-socials:focus {
@@ -359,6 +355,8 @@ body {
   height: 90px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-logo:hover,
 .clients-logo:focus {
@@ -437,14 +435,17 @@ footer {
   border-radius: 50%;
   line-height: 0;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.socials-item-footer:hover {
+.socials-item-footer:hover,
+.socials-item-footer:focus {
   background-color: var(--accent-color);
 }
 .socials-item-footer:not(:last-child) {
   margin-right: 10px;
 }
-/* subscription */
+
+/* Subscription */
 .subscription-container {
   margin-bottom: 0;
 }
@@ -522,9 +523,11 @@ footer {
   letter-spacing: 0.03em;
   border-radius: 4px;
   background-color: var(--secondary-bg-color);
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.button-filter:hover,
-.button-filter:focus {
+.button-filter:hover {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -557,6 +560,7 @@ footer {
   margin-right: 30px;
   margin-bottom: 30px;
   width: 370px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .gallery .element:hover,
 .gallery .element:focus {
@@ -601,26 +605,25 @@ footer {
 
 .gallery-overlay {
   position: relative;
+  overflow: hidden;
 }
-.gallery-overlay:hover .text {
-  opacity: 1;
-}
-.gallery-overlay:hover::before {
-  opacity: 1;
-}
-.gallery-overlay::before {
+.gallery-overlay .overlay {
   position: absolute;
-  content: "";
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 
-  display: inline-block;
   background-color: rgba(33, 150, 243, 0.9);
-  opacity: 0;
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.gallery-overlay .text {
+.gallery-overlay:hover .overlay,
+.gallery-overlay:focus .overlay {
+  transform: translateY(0);
+}
+.overlay .text {
   position: absolute;
   top: 0;
   left: 0;
@@ -634,5 +637,4 @@ footer {
   color: var(--primary-white-color);
   font-size: 18px;
   line-height: 1.56;
-  opacity: 0;
 }
