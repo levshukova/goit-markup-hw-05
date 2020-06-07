@@ -156,7 +156,8 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts .link:hover,
 .contacts .link:focus {
@@ -322,23 +323,31 @@ body {
 .socials-item-team:not(:last-child) {
   margin-right: 10px;
 }
-.list-socials .button-socials {
+.button-socials {
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 44px;
   height: 44px;
   border-radius: 50%;
   padding: 0;
   line-height: 0;
+
   background-color: var(--primary-white-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-socials:hover,
 .button-socials:focus {
-  --color2: var(--primary-white-color);
   background-color: var(--accent-color);
+}
+.icon-socials-team {
+  fill: var(--icon-color-main);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-socials:hover .icon-socials-team,
+.button-socials:focus .icon-socials-team {
+  fill: var(--primary-white-color);
 }
 
 /* Clients */
@@ -355,7 +364,8 @@ body {
   height: 90px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: --color2 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    --color4 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-logo:hover,
@@ -363,6 +373,14 @@ body {
   border: 1px solid var(--accent-color);
   --color2: var(--accent-color);
   --color4: var(--accent-color);
+}
+.icon-clients {
+  fill: var(--icon-color-main);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.clients-logo:hover .icon-clients,
+.clients-logo:focus .icon-clients {
+  fill: var(--accent-color);
 }
 
 /* footer */
